@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.HashMap;
 
 public class ParkingLot {
@@ -62,5 +63,16 @@ public class ParkingLot {
 				System.out.println(i + "\t" + "null" + "\t" + "null");
 			}
 		}
+	}
+
+	public String getRegistrationsByColour(String colour) {
+		String registrations = "";
+		Collection<Car> cars = this.parkingLotMapping.values();
+		for (Car car : cars) {
+			if (car.getColour().equals(colour)) {
+				registrations += car.getRegistrationNo() + ", ";
+			}
+		}
+		return registrations.substring(0, registrations.length() - 2);
 	}
 }
