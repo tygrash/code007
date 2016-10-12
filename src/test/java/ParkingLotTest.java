@@ -45,4 +45,12 @@ public class ParkingLotTest {
     	parkingLot.park(carTwo);
     	assertEquals(new Integer(2), parkingLot.totalCars());
     }
+    
+    @Test
+    public void testCarLeaveASlot() {
+    	ParkingLot parkingLot = new ParkingLot(6);
+    	Car carOne = new Car("RJ-02-CB-5244", "White");
+    	parkingLot.park(carOne);
+    	assertEquals("Slot number 1 is free", parkingLot.leave(1));
+    }
 }
