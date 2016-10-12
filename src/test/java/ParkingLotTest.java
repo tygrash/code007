@@ -24,9 +24,9 @@ public class ParkingLotTest {
     public void testCarsInParkingSlots() {
     	ParkingLot parkingLot = new ParkingLot(6);
     	Car carOne = new Car("MH-12 12-222", "White");
-    	parkingLot.insert(carOne);
+    	parkingLot.park(carOne);
     	Car carTwo = new Car("MH-01 01-299", "Black");
-    	parkingLot.insert(carTwo);
+    	parkingLot.park(carTwo);
     	assertEquals(new Integer(2), parkingLot.totalCars());
     }
 }
