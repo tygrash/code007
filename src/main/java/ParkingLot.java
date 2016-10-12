@@ -1,5 +1,6 @@
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Set;
 
 public class ParkingLot {
 	private Integer slotsCount;
@@ -74,5 +75,17 @@ public class ParkingLot {
 			}
 		}
 		return registrations.substring(0, registrations.length() - 2);
+	}
+
+	public String getSlotsByCarColour(String colour) {
+		String slots = "";
+		Set<Integer> keys = this.parkingLotMapping.keySet();
+		for (Integer key : keys) {
+			Car car = this.parkingLotMapping.get(key);
+			if (car != null && car.getColour().equals(colour)) {
+				slots += Integer.toString(key) + ", ";
+			}
+		}
+		return slots.substring(0, slots.length() - 2);
 	}
 }
