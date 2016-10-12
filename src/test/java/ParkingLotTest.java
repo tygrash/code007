@@ -77,4 +77,9 @@ public class ParkingLotTest {
     public void testSlotsForParticularCarColour() {
     	assertEquals("1, 4, 5", parkingLot.getSlotsByCarColour("White"));
     }
+    
+    @Test
+    public void testSlotForParticularRegistration() {
+    	assertEquals("1", parkingLot.getSlotsByCarRegistration("RJ-02-CB-5244"));
+    }
 }
