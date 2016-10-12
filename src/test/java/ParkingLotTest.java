@@ -1,7 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class LibraryTest {
+public class ParkingLotTest {
     @Test 
     public void testParkingLotObjectClass() {
        ParkingLot parkingLot = new ParkingLot(6);
