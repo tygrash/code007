@@ -1,8 +1,5 @@
 import java.util.HashMap;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ParkingLot {
 	private Integer slotsCount;
 	
@@ -14,9 +11,7 @@ public class ParkingLot {
 			this.parkingLotMapping.put(i, null);
 		}
 	}
-	
-	private static Logger logger = LoggerFactory.getLogger(ParkingLot.class);
-	
+		
 	public Integer getSlotsCount() {
 		return this.slotsCount;
 	}
@@ -37,7 +32,7 @@ public class ParkingLot {
 			return "Sorry, parking lot is full";
 		}
 		this.parkingLotMapping.put(emptySlot, carOne);
-		return "Car is parked at slot : " + Integer.toString(emptySlot);
+		return "Allocated slot number: " + Integer.toString(emptySlot);
 	}
 	
 	private Integer getFreeSlot() {

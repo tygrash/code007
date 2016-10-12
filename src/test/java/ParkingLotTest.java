@@ -21,11 +21,27 @@ public class ParkingLotTest {
     }
     
     @Test
+    public void testParkInALot() {
+    	ParkingLot parkingLot = new ParkingLot(6);
+    	Car carOne = new Car("KA-01-23-HY66", "White");
+    	assertEquals("Allocated slot number: 1", parkingLot.park(carOne));
+    }
+    
+    @Test
+    public void testUnavailabilityInParkingLot() {
+    	ParkingLot parkingLot = new ParkingLot(1);
+    	Car carOne = new Car("HR-26-23-HY66", "White");
+    	parkingLot.park(carOne);
+    	Car carTwo = new Car("KA-01-23-HY66", "White");
+    	assertEquals("Sorry, parking lot is full", parkingLot.park(carTwo));
+    }
+    
+    @Test
     public void testCarsInParkingSlots() {
     	ParkingLot parkingLot = new ParkingLot(6);
-    	Car carOne = new Car("MH-12 12-222", "White");
+    	Car carOne = new Car("MH-12-12-222", "White");
     	parkingLot.park(carOne);
-    	Car carTwo = new Car("MH-01 01-299", "Black");
+    	Car carTwo = new Car("MH-01-01-299", "Black");
     	parkingLot.park(carTwo);
     	assertEquals(new Integer(2), parkingLot.totalCars());
     }
