@@ -69,4 +69,22 @@ public class ParkingLotTest {
     	parkingLot.park(carOne);
     	parkingLot.status();
     }
+    
+    @Test
+    public void testRegistrationsForParticularColour() {
+    	ParkingLot parkingLot = new ParkingLot(6);
+    	Car carOne = new Car("RJ-02-CB-5244", "White");
+    	parkingLot.park(carOne);
+    	Car carTwo = new Car("MH-12-CX-5744", "Brown");
+    	parkingLot.park(carTwo);
+    	Car carThree = new Car("GJ-10-RX-7294", "Pink");
+    	parkingLot.park(carThree);
+    	Car carFour = new Car("RJ-01-GH-5677", "White");
+    	parkingLot.park(carFour);
+    	Car carFive = new Car("RJ-14-QT-9087", "White");
+    	parkingLot.park(carFive);
+    	Car carSix = new Car("KA-05-BT-7654", "White");
+    	parkingLot.park(carSix);
+    	assertEquals("RJ-02-CB-5244, RJ-01-GH-5677, RJ-14-QT-9087, KA-05-BT-7654", parkingLot.getRegistrationsByColour("White"));
+    }
 }
