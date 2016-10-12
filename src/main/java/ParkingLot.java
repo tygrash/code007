@@ -69,7 +69,7 @@ public class ParkingLot {
 		String registrations = "";
 		Collection<Car> cars = this.parkingLotMapping.values();
 		for (Car car : cars) {
-			if (car.getColour().equals(colour)) {
+			if (car != null && car.getColour().equals(colour)) {
 				registrations += car.getRegistrationNo() + ", ";
 			}
 		}
