@@ -43,4 +43,12 @@ public class ParkingLot {
 		}
 		return 0;
 	}
+
+	public String leave(int position) {
+		if (position >= this.slotsCount || position < 1) {
+			return "Sorry, this slot doesn't exist";
+		}
+		this.parkingLotMapping.put(position, null);
+		return "Slot number " + Integer.toString(position) + " is free";
+	}
 }
