@@ -69,17 +69,32 @@ public class ParkingLotTest {
     }
     
     @Test
-    public void testRegistrationsForParticularCarColour() {
-    	assertEquals("RJ-02-CB-5244, KA-05-BT-7654, RJ-14-QT-9087", parkingLot.getRegistrationsByColour("White"));
+    public void testRegistrationsForCarColourWhite() {
+    	assertEquals("KA-05-BT-7654, RJ-14-QT-9087, KA-01-23-HY66", parkingLot.getRegistrationsByColour("White"));
     }
     
     @Test
-    public void testSlotsForParticularCarColour() {
-    	assertEquals("1, 4, 5", parkingLot.getSlotsByCarColour("White"));
+    public void testRegistrationsForCarColourBrown() {
+    	assertEquals("MH-12-CX-5744", parkingLot.getRegistrationsByColour("Brown"));
+    }
+    
+    @Test
+    public void testSlotsForParticularCarColourPink() {
+    	assertEquals("3", parkingLot.getSlotsByCarColour("Pink"));
+    }
+    
+    @Test
+    public void testSlotsForParticularCarColourWhite() {
+    	assertEquals("1, 4, 5, 6", parkingLot.getSlotsByCarColour("White"));
     }
     
     @Test
     public void testSlotForParticularRegistration() {
     	assertEquals("1", parkingLot.getSlotsByCarRegistration("RJ-02-CB-5244"));
+    }
+    
+    @Test
+    public void testSlotNotFoundForParticularRegistration() {
+    	assertEquals("Not found", parkingLot.getSlotsByCarRegistration("RJ-02-CB-5444"));
     }
 }

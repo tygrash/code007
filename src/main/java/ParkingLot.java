@@ -88,4 +88,15 @@ public class ParkingLot {
 		}
 		return slots.substring(0, slots.length() - 2);
 	}
+
+	public String getSlotsByCarRegistration(String registration) {
+		Set<Integer> keys = this.parkingLotMapping.keySet();
+		for (Integer key : keys) {
+			Car car = this.parkingLotMapping.get(key);
+			if (car != null && car.getRegistrationNo().equals(registration)) {
+				return Integer.toString(key);
+			}
+		}
+		return "Not found";
+	}
 }
