@@ -51,4 +51,16 @@ public class ParkingLot {
 		this.parkingLotMapping.put(position, null);
 		return "Slot number " + Integer.toString(position) + " is free";
 	}
+	
+	public void status() {
+		System.out.println("Slot No." + "\t" + "Registration No" + "\t" + "Colour");
+		for (Integer i = 1; i <= this.slotsCount; i++) {
+			Car car = this.parkingLotMapping.get(i);
+			if (car != null) {
+				System.out.println(i + "\t" + car.getRegistrationNo() + "\t" + car.getColour());
+			} else {
+				System.out.println(i + "\t" + "null" + "\t" + "null");
+			}
+		}
+	}
 }

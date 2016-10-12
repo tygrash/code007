@@ -9,4 +9,11 @@ public class Car {
 		this.colour = colour;
 	}
 
+	public String getRegistrationNo() {
+		return registrationNo;
+	}
+
+	public String getColour() {
+		return colour;
+	}
 }
