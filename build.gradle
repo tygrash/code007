@@ -1,8 +1,28 @@
 
 apply plugin: 'java'
 
+sourceCompatibility = 1.8
+
 repositories {
-    jcenter()
+    mavenCentral()
+}
+
+sourceSets {
+    test {
+        java {
+            srcDirs = ["src/test"]  // Note @Peter's comment below
+        }
+    }
+}
+
+test {
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+    testLogging {
+        exceptionFormat "full" // default is "short"
+        events "passed", "skipped", "failed"
+    }
 }
 
 // In this section you declare the dependencies for your production and test code
