@@ -7,10 +7,16 @@ repositories {
     mavenCentral()
 }
 
+//task startServer(type: JavaExec){
+//    main = "com.parkinglot.server.ParkingLotApplication"
+//    description = "Start app"
+//    classpath = sourceSets.main.runtimeClasspath
+//}
+
 sourceSets {
     test {
         java {
-            srcDirs = ["src/test"]  // Note @Peter's comment below
+            srcDirs = ["src/test"]
         }
     }
 }
@@ -27,7 +33,5 @@ test {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.13'
-
     testCompile 'junit:junit:4.12'
 }

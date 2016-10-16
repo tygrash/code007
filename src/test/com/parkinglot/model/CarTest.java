@@ -1,5 +1,7 @@
-package com.parkinglot;
+package com.parkinglot.model;
 
+import com.parkinglot.model.Car;
+import com.parkinglot.model.ParkingLot;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

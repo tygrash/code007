@@ -1,4 +1,4 @@
-package com.parkinglot;
+package com.parkinglot.model;
 
 public class Car {
 	private String registrationNo;

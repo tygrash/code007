@@ -1,4 +1,7 @@
-package com.parkinglot;
+package com.parkinglot.model;
+
+import com.parkinglot.model.Car;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
@@ -61,8 +64,6 @@ public class ParkingLot {
 			Car car = this.parkingLotMapping.get(i);
 			if (car != null) {
 				System.out.println(i + "\t" + car.getRegistrationNo() + "\t" + car.getColour());
-			} else {
-				System.out.println(i + "\t" + "null" + "\t" + "null");
 			}
 		}
 	}
